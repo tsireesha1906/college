@@ -1,0 +1,35 @@
+<table border="1">
+	<tr>
+	<th>
+		Name
+	</th>
+	<th>
+		address
+	</th>
+	<td>
+		Actions
+	</td>
+	<tr>
+
+
+
+<%@students.each do |s|%>
+<tr>
+	<td>
+		<%=s.name%>
+	</td>
+	<td>
+		<%=s.address%>
+	</td>
+	<td>
+		<%=link_to "edit", edit_student_path(s)%>
+		<%#=link_to "Destroy", action: :delete, id: s.id, method: :delete, confirm: "Are you sure?"%>
+		<%#= link_to "Remove from Library",student_path(s), method: :delete,remo %>.
+		<%= link_to 'Unsubscribe', student_path(s.id), method: :delete, remote: :true %>
+	</td>
+	</tr>
+
+<%end%>
+
+</table>
+<%=link_to "New Student", new_student_path%>
